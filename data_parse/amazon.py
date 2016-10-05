@@ -105,4 +105,6 @@ def save_category_ids(cat_list, out_file):
     return category_dict, counter
 
 
+
+
 start()

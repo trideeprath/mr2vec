@@ -1,7 +1,4 @@
-/**
- * 
- */
-package edu.asu.nlu.alzheimer.helper;
+package java_src;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,10 +12,7 @@ import java.util.HashSet;
 
 import com.google.common.collect.Sets;
 
-/**
- * @author Arpit Sharma
- *
- */
+
 public class Utilities {
 	
 	public static void saveObject(Object c, String name){
@@ -39,7 +33,7 @@ public class Utilities {
 		HashSet<String> listOfFiles = Sets.newHashSet();
 		for (final File fileEntry : folder.listFiles()) {
 			if (fileEntry.isDirectory()) {
-//				listFilesForFolder(fileEntry);
+				//listFilesForFolder(fileEntry);
 			} else {
 				listOfFiles.add(fileEntry.getName());
 			}
@@ -66,7 +60,7 @@ public class Utilities {
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			obj = ois.readObject();
 			ois.close();
-		}catch(IOException | ClassNotFoundException e){
+		}catch(Exception e){
 			e.printStackTrace();
 		}
 		return obj;

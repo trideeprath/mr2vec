@@ -2,3 +2,7 @@
 .idea
 __pycache__/
 pickle_data/
+.project
+.pydevproject
+/bin/
+.classpath

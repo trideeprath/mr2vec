@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import module.graph.ParserHelper;
 
+
 public class SentenceToKparser {
 	
 
@@ -21,8 +22,8 @@ public class SentenceToKparser {
 
 	public static void main(String[] args) throws IOException, JSONException{
 
-		String csvFile = "/home/trideep/PycharmProjects/mr2vec/data/amazon/amazon_sentences.csv";
-		String outFile = "/home/trideep/PycharmProjects/mr2vec/data/amazon/amazon_kparser.csv";
+		String csvFile = "./data/amazon/amazon_sentences.csv";
+		String outFile = "./data/amazon/amazon_kparser.csv";
         String line = "";
         String cvsSplitBy = ",";
 		
@@ -34,15 +35,13 @@ public class SentenceToKparser {
 			JSONObject json_obj = new JSONObject();
 			String kparser_input = line.split(cvsSplitBy)[1];
 			String index = line.split(cvsSplitBy)[0];
+			System.out.println(index);
 			String json_output = ph.getJsonString(kparser_input, false);
 			json_obj.put("index", index);
 			json_obj.put("sentence", kparser_input);
 			json_obj.put("kparser", new JSONArray(json_output));
 			out.append(json_obj.toString());
-			out.newLine();
-			if(Integer.parseInt(index) > 10){
-				break;
-			}
+			out.newLine();	
 		}
 		in.close();
 		out.close();

@@ -55,14 +55,6 @@ def create_test_train(csv_file = fp.amazon_category_review, out_train=None, out_
     test_result = pd.concat(test_df)
     test_result.to_csv(out_test)
 
-    #print(train_df)
-
-
-    #print(keyboard_neg_train.shape,keyboard_neg_test.shape)
-
-
-
-
 
 def parse(filename):
     f = gzip.open(filename, 'r')
